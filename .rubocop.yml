@@ -1,0 +1,5 @@
+require:
+  - rebocop-rspec
+Allcops:
+  TargetRubyVersion: 2.5
+  NewCops: enable
