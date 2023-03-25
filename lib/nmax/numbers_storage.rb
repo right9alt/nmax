@@ -4,7 +4,7 @@ module Nmax
     #сейчас - излишне, в будущем может понадобится
       def initialize
         @storage = []
-        @n = ARGV[0].to_i
+        @n = ARGV[0].to_i if ARGV[0]
       end
 
       def size
@@ -16,7 +16,7 @@ module Nmax
       end
 
       def push(item)
-        if @storage.size < @n
+        if @storage.size < @n || @n == 0
           @storage << item
         else
           min_elem = @storage.min
@@ -25,6 +25,10 @@ module Nmax
             @storage[min_index] = item
           end
         end
+      end
+      
+      def to_a
+        @storage.to_a
       end
 
       def each(&block)
