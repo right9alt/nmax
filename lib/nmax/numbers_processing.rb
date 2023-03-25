@@ -3,7 +3,6 @@ module Nmax
     def initialize(stream)
       @stream = stream.to_s
       @storage = NumbersStorage.new
-      @n = ARGV[0].to_i
     end
 
     def run 
@@ -11,15 +10,22 @@ module Nmax
       print_data
     end
 
+    private
     def fill_data
-      @storage = @stream.scan(/\d{1,1000}/m).map(&:to_i)
-                                            .sort
-                                            .reverse
-                                            .first(@n)
+      number = ''
+      @stream.each_char do |symbol|
+        if /\d/.match?(symbol)
+          number += symbol
+        else
+          next if number.empty?
+          @storage.push(number.to_i)
+          number = ''
+        end
+      end
     end
 
     def print_data
-      @storage.each { |value| p value}
+      @storage.sort.each { |value| p value}
     end
   end
 end

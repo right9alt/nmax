@@ -5,6 +5,6 @@ require "nmax/numbers_processing"
 
 module Nmax
     def self.call
-      Nmax::NumbersProcessing.new(stream: STDIN.gets).run
+      Nmax::NumbersProcessing.new(stream: STDIN.readlines).run
     end
 end
