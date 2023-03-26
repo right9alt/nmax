@@ -14,9 +14,12 @@
 
 
 ## Installation
+git clone https://github.com/right9alt/nmax.git
+cd nmax
+export PATH="./bin:$PATH"
+setup
 ## Usage
-## Contributing
-
+cat test_large.txt | nmax 10
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

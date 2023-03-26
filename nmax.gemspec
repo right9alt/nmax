@@ -9,7 +9,7 @@ require 'nmax/version'
     spec.email         = ["right9alt@gmail.com"]
     spec.summary       = 'gem find n max numbers'
     spec.description   = 'gem find n max numbers'
-    spec.homepage      = "https://website.com"
+    spec.homepage      = "https://github.com/right9alt/nmax.git"
     spec.license       = "MIT"
     spec.files = Dir['README.md', 'LICENSE','lib/**/*/rake', 
                      'nmax.gemspec', 'Gemfile', 'Rakefile', 
